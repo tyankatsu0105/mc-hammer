@@ -1,33 +1,33 @@
 {
-  "name": "boilerplate-create-modules-with-ts",
+  "name": "@tyankatsu0105/mc-hammer",
   "version": "0.1.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/tyankatsu0105/boilerplate-create-modules-with-ts#readme",
+  "homepage": "https://github.com/tyankatsu0105/mc-hammer#readme",
   "bugs": {
-    "url": "https://github.com/tyankatsu0105/boilerplate-create-modules-with-ts/issues"
+    "url": "https://github.com/tyankatsu0105/mc-hammer/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tyankatsu0105/boilerplate-create-modules-with-ts.git"
+    "url": "git+https://github.com/tyankatsu0105/mc-hammer.git"
   },
   "license": "MIT",
   "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.netlify.com/)",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "precommit": "lint-staged",
     "commit": "git-cz",
     "test": "jest",
-    "build": "tsc",
     "watch": "tsc --watch"
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "git add"
-    ],
     "*.md": [
       "prettier --write",
+      "git add"
+    ],
+    "*.ts": [
+      "eslint --fix",
       "git add"
     ]
   },
@@ -53,5 +53,8 @@
     "tslib": "^1.10.0",
     "typescript": "^3.7.4"
   },
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }
