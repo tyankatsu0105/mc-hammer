@@ -1,0 +1,28 @@
+module.exports = {
+  root: true,
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint'
+  ],
+  plugins: [
+    '@typescript-eslint'
+  ],
+  env: { node: true, jest: true },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    sourceType: 'module',
+    project: './tsconfig.json',
+    createDefaultProgram: true
+  },
+  rules: {
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn", {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true
+      }
+    ]
+  }
+};

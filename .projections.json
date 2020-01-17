@@ -1,0 +1,3 @@
+{
+  "*.ts": { "alternate": "{dirname}/__test__/{basename}.spec.ts" }
+}

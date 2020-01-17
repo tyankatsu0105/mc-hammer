@@ -1,0 +1,35 @@
+name: Test
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Tokyo'
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Read .tool-versions
+        uses: marocchino/tool-versions-action@v1
+        id: asdf
+
+      - name: Use Node.js ${{ steps.asdf.outputs.nodejs }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ steps.asdf.outputs.nodejs }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Unit Test
+        run: npm run test
