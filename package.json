@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "description": "",
   "keywords": [],
+  "bin": {
+    "@tyankatsu0105/mc-hammer": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
   "homepage": "https://github.com/tyankatsu0105/mc-hammer#readme",
   "bugs": {
     "url": "https://github.com/tyankatsu0105/mc-hammer/issues"
@@ -19,7 +26,8 @@
     "precommit": "lint-staged",
     "commit": "git-cz",
     "test": "jest",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "install-with-types": "install-with-types"
   },
   "lint-staged": {
     "*.md": [
@@ -39,6 +47,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.4",
+    "@types/react": "^16.9.17",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "commitizen": "^4.0.3",
@@ -56,5 +65,12 @@
   "peerDependencies": {},
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "import-jsx": "^3.1.0",
+    "ink": "^2.6.0",
+    "ink-big-text": "^1.0.1",
+    "ink-gradient": "^1.0.0",
+    "react": "^16.12.0"
   }
 }
